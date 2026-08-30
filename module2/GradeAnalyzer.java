@@ -101,12 +101,21 @@ public class GradeAnalyzer {
             return 0.0;
         }
         Double total_scores = 0.0;
+        int validCount = 0;
+
         for(int score : scores){
             if (score >= 0){
                 total_scores += score;
+                validCount++;
             }
         }
-        return total_scores / scores.size();
+
+        if(validCount == 0){
+            return 0.0;
+        }
+
+        // return total_scores / scores.size();
+        return total_scores / validCount;
     }
 
     // Writes and prints the report
