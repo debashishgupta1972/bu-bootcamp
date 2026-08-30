@@ -97,6 +97,9 @@ public class GradeAnalyzer {
 
     // Returns the average of a list of scores, or 0.0 if the list is empty
     public static double calculateAverage(ArrayList<Integer> scores){
+        if (scores.isEmpty()){
+            return 0.0;
+        }
         Double total_scores = 0.0;
         for(int score : scores){
             if (score >= 0){
